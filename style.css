@@ -1,0 +1,604 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+    /* colors */
+    --clr-cream: 44 100% 97%; 
+    --clr-purple: 245, 60%, 55%;
+    --clr-gray: 0 0% 68%;
+    --clr-dark-gray : 0 0% 80%;
+    --clr-white: 0 0% 100%;
+
+
+    
+    /* font-sizes */
+    --fs-48: 2em;
+    --fs-32: 1.5em;
+    --fs-24: 1.2em;
+    --fs-18: 1em;
+    --fs-16: 0.9em;
+    --fs-14: 0.8em;
+    --fs-12: 0.6em;
+    --fs-10: 0.55em;
+    
+    /* font-families */
+    --ff-sans: 'Public Sans';
+}
+
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    margin: 0;
+}
+
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    overflow: auto;
+    height: 100%;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    color: inherit;
+}
+
+a { 
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.btna {
+    background: none;
+    width: 1em;
+    height: 1em;
+}
+
+
+
+/*------------- UTILITY CLASSES -----------*/
+
+/* Typography */
+.ff-sans { font-family: var(--ff-sans);}
+
+.fs-a { font-size: var(--fs-16);}
+.fs-p { font-size: var(--fs-18);}
+.fs-h1 { font-size: var(--fs-48);}
+.fs-h2 { font-size: var(--fs-32);}
+.fs-h3 { font-size: var(--fs-24);}
+.fs-h4 { font-size: var(--fs-18);}
+.fs-h5 { font-size: var(--fs-14);}
+.fs-h6 { font-size: var(--fs-12);}
+
+/* Colors */
+.text-gray { color: hsl( var(--clr-gray));}
+.text-purple { color: hsl( var(--clr-purple));}
+.text-white { color: hsl( var(--clr-white));}
+
+.bg-cream { background: hsl( var(--clr-cream));}
+.bg-white { background: hsl( var(--clr-white));}
+.bg-purple { background: hsl( var(--clr-purple));}
+
+
+/* ------------------------------------ */
+/* ---------------- Utility classes ---------*/
+/* ------------------------------------ */
+
+.flex { display: flex; align-items: center;}
+
+.flex-res { display: flex;  flex-direction: column;}
+
+.column { flex-direction: column;}
+
+.flex-row-rev { flex-direction: row-reverse;}
+
+.grid { display: grid;}
+
+.container { padding-inline: 5vw;}
+
+.form-pad { padding: }
+
+.line-container { padding: 2em 0;}
+
+.line-m-top { margin-top: 1em 0;}
+
+.para-wrap { padding: 1% 4%  ;}
+
+.space-btwn { justify-content: space-between;}
+
+.bold { font-weight: 700;}
+
+.uppercase { text-transform:uppercase;}
+
+.center { justify-content: center; justify-items: center; align-items: center;}
+
+.l-h { line-height: 2em;}
+
+.pd-05 { padding: 0.5em;}
+
+.pd-1 { padding: 1em;}
+
+.pd-2 { padding: 2em;}
+
+.pd-5 { padding: 5em;}
+
+.pd-y { padding: 0.5em 0;}
+
+.pd-y2 { padding: 2em 0;}
+
+.pd-inline { padding-inline: 2em;}
+
+.pd-in1 { padding-inline: 1em;}
+
+.pd-in-start { padding-inline-start: 0.5em;}
+
+.pad-bot { padding-bottom: 1em;}
+
+.pad-bot05 { padding-bottom: 0.5em;}
+
+.btn-margin { margin: 3em 0;}
+
+.m-2 { margin: 2em 0;}
+
+.m-1 { margin: 1em 0;}
+
+.m-05 { margin: 0.5em 0;}
+
+.mx-05 { margin: 0 0.5em;}
+
+.center-text { text-align: center;}
+
+.start-text { text-align: start;}
+
+.shadow { box-shadow: 0px 7px 25px -4px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 7px 25px -4px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 7px 25px -4px rgba(0,0,0,0.2);
+}
+
+/* body */
+body {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+}
+
+header {
+    padding: 1em 0;
+    padding-bottom: 0;
+}
+
+
+
+nav {
+    display: none;
+}
+
+.nav-active {
+    display: flex;
+    flex-direction: column;
+    background: hsl( var(--clr-gray)/0.5);
+    border-radius: 15px;
+    font-size: 1em;
+    padding: 2em;
+    height: 80vh;
+    width: 40vw;
+    position: absolute;
+    top: 1em;
+    right: 0;
+}
+
+
+.intro-img img{
+    width: 100%;
+    height: fit-content;
+    max-width: 30em;
+}
+
+.rate { display: none;}
+
+/* BUTTONS */
+
+button {
+    outline: none;
+    border: none;
+    width: 100%;
+    text-align: center;
+}
+
+.btn {
+    padding: 1em 1em;
+    border-radius: 5px;
+    margin: 1em 0;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-purple {
+    color: hsl( var(--clr-white));
+    background-color: hsl( var(--clr-purple));
+}
+
+.btn-under {
+    border-bottom: 2px solid hsl( var(--clr-purple));
+    width: fit-content;
+    color: hsl( var(--clr-purple));
+    align-self: center;
+    margin-bottom: 1em;
+}
+
+.btn-white {
+    background-color: hsl( var(--clr-white));
+    color: hsl( var(--clr-purple));
+}
+
+.btn-hollow {
+    background-color: transparent;
+    border: 1px solid hsl( var(--clr-gray));
+    color: hsl( var(--clr-purple));
+}
+
+span {
+    position: absolute;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: animate 1s linear infinite;
+}
+@keyframes animate 
+{
+    0%
+    {
+        width: 0px;
+        height: 0px;
+    }
+    100%
+    {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* --- LAYOUT --- */
+
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2em;
+}
+
+.grid4 > ul {
+    padding: 1em;
+    padding-top: 0;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(15em, 1fr));
+    gap: 1em;
+}
+
+.flex-res { /* this must always be at the bottom of the layout category to work */
+    display: flex;
+    flex-direction: column;
+}
+/* ----SECTION 2 ------*/
+
+.wrapper img{
+    width: 100%;
+    height: 140%;
+    object-fit: contain;
+}
+
+
+.wrapper {
+    background-color: hsl( var(--clr-purple));
+    border-radius: 5px;
+    position: relative;
+    margin: 2em 0;
+}
+
+.card {
+    margin: 1em 0;
+    height: fit-content;
+    padding: 1em;
+}
+
+.border { 
+    box-shadow: 0px 1px 13px 4px rgba(202, 202, 202, 0.48);
+    -webkit-box-shadow: 0px 1px 13px 4px rgba(214, 214, 214, 0.48);
+    -moz-box-shadow: 0px 1px 13px 4px rgba(212, 212, 212, 0.48);
+    border: 1px solid hsl( var(--clr-gray)/0.15);
+    border-radius: 5px;
+    padding-bottom: 2em;
+}
+
+.border p {
+    padding-bottom: 1.2em;
+}
+
+footer li {
+    line-height: 2em;
+}
+
+/* textimonial functionality */
+
+/*  New Slider components */
+
+.slider-ctrl {
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+
+.slider-ctrl label {
+    height: 15px;
+    width: 15px;
+    background: hsl( var(--clr-gray)/0.3);
+    margin: 0 4px;
+    border-radius: 50%;
+}
+
+.slider-ctrl label.active{
+    background: hsl( var(--clr-purple));
+}
+
+#card1:checked ~ .slider-ctrl label.card1 {
+    background: hsl( var(--clr-purple));
+}
+
+#card2:checked ~ .slider-ctrl label.card2 {
+    background: hsl( var(--clr-purple));
+}
+
+#card3:checked .slider-ctrl label.card3 {
+    background: hsl( var(--clr-purple));
+}
+
+#card1:checked ~ .slider-ctrl label.card2, label.card3 {
+    background: hsl( var(--clr-gray)/0.3);
+}
+
+#card2:checked ~ .slider-ctrl label.card3, label.card1 {
+    background: hsl( var(--clr-gray)/0.3);
+}
+
+#card3:checked ~ .slider-ctrl label.card1, label.card2 {
+    background: hsl( var(--clr-gray)/0.3);
+}
+
+/* ------------ */
+
+/* Tablet View */
+@media (min-width: 40rem) {
+    body {
+        font-size: 1em;
+        
+    }
+    .flex-res {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .intro {
+        flex-direction: row-reverse;
+    }
+    
+    .intro-img {
+        width: 80vw;
+    }
+    .grid2 {
+        display: grid;
+        grid-template-columns: 2fr 4fr;
+        gap: 1em;
+    }
+    .grid4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1em;
+    }
+    
+    .text-white {
+        place-self: center;
+    }
+    
+    .intro .container {
+        padding: 3em 4em;
+    }
+    
+    .wrapper {
+        overflow: hidden;
+        margin: 0.5em;
+        padding: 0.5em;
+    }
+    .btn-purple,
+    .btn-white {
+        width: fit-content;
+    }
+    .intro .text {
+        place-self: center;
+    }
+}
+
+
+/*--------- Desktop View -----*/
+@media (min-width: 50rem) {
+
+
+
+
+    .rate {
+        display: flex;
+    }
+
+    .btn-under {
+        margin-bottom: 0;
+    }
+
+    nav,
+    .sign {
+    display: block;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+}
+
+/* Form */
+
+.left{ 
+    position: relative;
+    width: 50%;
+}
+
+form > .content {
+    position: absolute;
+    padding: 2em;
+}
+
+.right {
+    width: 50%;
+}
+
+.form-container {
+    display: flex;
+    height: 80vh;
+    margin: auto;
+    margin-top: 3em;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0px 1px 13px 4px rgba(202, 202, 202, 0.48);
+    -webkit-box-shadow: 0px 1px 13px 4px rgba(214, 214, 214, 0.48);
+    -moz-box-shadow: 0px 1px 13px 4px rgba(212, 212, 212, 0.48);
+    overflow: hidden;
+}
+
+.input {
+    padding: 0.5em;
+    width: 90%;
+    outline: none;
+    border: 1px solid hsl( var(--clr-gray)/0.3);
+    border-radius: 3px;
+    margin: 0.3em 0;
+}
+
+
+#form-1 {
+    transform: translateX(-600px);
+    transition: 1s;
+}
+
+#form-2 {
+    transform: translateX(-00px);
+    transition: 1s;
+}
+
+.form-info {
+    width: 100%;
+    margin: auto;
+    
+}
+
+.form-info button{
+    width: 100%;
+}
+
+.form-info a{
+    text-decoration: underline;
+    color: hsl( var(--clr-purple));
+}
+
+.form-info .ws{
+    text-align: center;
+}
+
+.right > div {
+    padding: 4em 3em;
+}
+
+.right img {
+    width: 100%;
+}
+
+.right .text {
+    color: hsl( var(--clr-white));
+    font-weight: lighter;
+    width: 100%;
+    padding: 1em;
+}
+
+/* TAB VIEW */
+@media (max-width: 750px) {
+
+    .form-container {
+        width: 90%;
+        height: 80vh;
+       }
+
+}
+
+/* MOBILE VIEW */
+@media (max-width: 600px) {
+    .right {
+        display: none;
+    }
+
+    .left {
+        width: 100%;
+    }
+
+    .form-container {
+        width: 100%;
+        height: 90vh;
+        
+       }
+
+    .content {
+        width: 100%;
+    }
+
+}
+
